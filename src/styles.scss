@@ -47,14 +47,19 @@ $input-group-addon-bg: #ffffff;
   font-size: 85%;
 }
 .results::-webkit-scrollbar-thumb {
-  background: $gray-500;
+  background: $primary;
 }
 .results::-webkit-scrollbar-track {
-  background: $gray-200;
+  background: lighten($primary, 40%);
 }
 .results::-webkit-scrollbar {
     width: 6px;
     height: 6px;
+}
+.result:hover {
+  background-color: $primary;
+  color: white;
+  cursor: pointer;
 }
 
 .algolia-wrapper {
