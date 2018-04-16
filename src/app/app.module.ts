@@ -5,23 +5,48 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faCalendar,
+  faArrowAltCircleDown,
+  faStar,
+} from '@fortawesome/free-solid-svg-icons';
 
-const routes: Routes = [];
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { SearchService } from './search.service';
+import { HomeComponent } from './home/home.component';
+import { CardComponent } from './card/card.component';
+import { DaysagoPipe } from './daysago.pipe';
+
+library.add(faCalendar, faArrowAltCircleDown, faStar);
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: '**', component: HomeComponent },
+];
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, SearchbarComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    SearchbarComponent,
+    HomeComponent,
+    CardComponent,
+    DaysagoPipe,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+
+    FontAwesomeModule,
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-

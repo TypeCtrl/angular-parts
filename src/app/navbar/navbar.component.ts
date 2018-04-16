@@ -2,13 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
+  templateUrl: './navbar.component.html',
   styles: [`
   .navbar-brand {
     font-weight: 800;
-  }
-  .navbar {
-    border-bottom: 1px solid black;
   }
   .bg-custom {
     background: #c3002f;
@@ -19,7 +16,7 @@ import { Component, OnInit } from '@angular/core';
   }
   `],
 })
-export class NavigationComponent implements OnInit {
+export class NavbarComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}

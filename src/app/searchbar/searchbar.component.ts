@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
-  styles: [`
+  styles: [
+    `
   .input-group-prepend > .input-group-text {
     border-right: none;
   }
@@ -14,13 +15,17 @@ import { Component, OnInit } from '@angular/core';
     border-left-width: 0;
     border-right-width: 0;
   }
-  `]
+  `,
+  ],
 })
 export class SearchbarComponent implements OnInit {
   query = '';
-  constructor() { }
+  @Output() queryChange = new EventEmitter<string>();
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+  handleQueryChange(query: string) {
+    console.log(query);
+    this.queryChange.emit(query);
   }
-
 }

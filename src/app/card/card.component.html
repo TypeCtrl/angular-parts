@@ -1,0 +1,36 @@
+<a>
+  <div class="result border-bottom">
+    <div class="card-body">
+      <h6 class="card-title mb-2 text-primary">
+        {{ result.name }}
+        <small class="text-muted">
+          v{{ result.version }} updated {{ result.updated * 1000 | daysago }}
+        </small>
+      </h6>
+      <p class="card-text text-muted mb-2">{{ result.description }}</p>
+      <div class="d-flex flex-row">
+        <div class="mr-1 px-1 border">
+          {{ result.license }}
+        </div>
+        <div class="mr-2 px-1" style="padding-top: 1px">
+          <fa-icon [icon]="['fas', 'arrow-alt-circle-down']"></fa-icon>
+          <ng-template [ngIf]="result.downloadsCount > 1000">
+            {{ result.downloadsCount / 1000 | number:'1.0-0' }}k
+          </ng-template>
+          <ng-template [ngIf]="result.downloadsCount < 1000">
+            {{ result.downloadsCount | number:'1.0-0' }}
+          </ng-template>
+        </div>
+        <div class="mr-2" style="padding-top: 1px">
+          <fa-icon [icon]="['fas', 'star']"></fa-icon>
+          <ng-template [ngIf]="result.stars > 1000">
+            {{ result.stars / 1000 | number:'1.0-0' }}k
+          </ng-template>
+          <ng-template [ngIf]="result.stars < 1000">
+            {{ result.stars | number:'1.0-0' }}
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

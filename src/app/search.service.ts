@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class SearchService {
-  baseUrl = 'https://ofcncog2cu-3.algolianet.com';
+  baseUrl = 'https://8HDRK698YZ-1.algolia.net';
   constructor(private httpClient: HttpClient) {}
 
-  search() {
-    return this.httpClient.get(`${this.baseUrl}/1/indexes/*/queries`);
+  search(query: string) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'X-Algolia-API-Key': '178381a2875a1d2958e062acb2b59fab',
+        'X-Algolia-Application-Id': '8HDRK698YZ',
+      }),
+    };
+    return this.httpClient.get<any>(
+      `${this.baseUrl}/1/indexes/packages`,
+      httpOptions,
+    );
   }
 }
-
-
 
 // curl -X POST \
 //   -H "X-Algolia-API-Key: 3d9875e51fbd20c7754e65422f7ce5e1" \
