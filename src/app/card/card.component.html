@@ -8,10 +8,7 @@
         </small>
       </h6>
       <p class="card-text text-muted mb-2">{{ result.description }}</p>
-      <div class="d-flex flex-row">
-        <div class="mr-1 px-1 border">
-          {{ result.license }}
-        </div>
+      <div class="d-flex flex-row text-dark">
         <div class="mr-2 px-1" style="padding-top: 1px">
           <fa-icon [icon]="['fas', 'arrow-alt-circle-down']"></fa-icon>
           <ng-template [ngIf]="result.downloadsCount > 1000">

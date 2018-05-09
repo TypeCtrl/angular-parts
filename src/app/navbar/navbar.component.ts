@@ -4,9 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-navigation',
   templateUrl: './navbar.component.html',
   styles: [`
-  .navbar-brand {
-    font-weight: 800;
-  }
   .bg-custom {
     background: #c3002f;
   }
