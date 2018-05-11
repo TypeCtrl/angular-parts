@@ -25,6 +25,7 @@ export class PackageComponent implements OnInit {
       const scope = params.scope ? params.scope + '/' : '';
       this.name = scope + params.name;
     });
+    // todo pass github link
     this.search.readme().subscribe(res => {
       this.readme = this.sanitizer.bypassSecurityTrustHtml(res);
     });
