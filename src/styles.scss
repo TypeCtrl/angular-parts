@@ -115,10 +115,18 @@ body {
 
 
 // readme cleanup
-.anchor {
+.readme {
+  .anchor {
   display: none;
-}
-pre {
-  padding: 1em;
-  background-color: whitesmoke;
+  }
+  pre {
+    padding: 1em;
+    background-color: whitesmoke;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
 }

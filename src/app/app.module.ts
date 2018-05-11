@@ -20,7 +20,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { SearchService } from './search.service';
 import { HomeComponent } from './home/home.component';
-import { CardComponent } from './card/card.component';
+import { ResultCardComponent } from './search/result-card/result-card.component';
 import { DaysagoPipe } from './daysago.pipe';
 import { PackageComponent } from './package/package.component';
 import { SearchComponent } from './search/search.component';
@@ -41,7 +41,7 @@ const routes: Routes = [
     NavbarComponent,
     SearchbarComponent,
     HomeComponent,
-    CardComponent,
+    ResultCardComponent,
     DaysagoPipe,
     PackageComponent,
     SearchComponent,

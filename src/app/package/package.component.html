@@ -3,47 +3,46 @@
     <div class="col-12 mb-3">
       <app-searchbar></app-searchbar>
     </div>
-    <div class="col-12">
+    <div class="col-12" *ngIf="package">
       <div class="bg-primary pt-5 px-5 pb-3">
+        <div class="text-muted-primary mb-2 text-right">
+          <span class="badge badge-primary border round mr-1" *ngFor="let tag of package._tags">{{ tag }}</span>
+          <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tags']"></fa-icon>
+        </div>
         <h5>
-          {{ name }}
+          {{ package.name }}
           <small class="text-muted-primary">
-            <span class="small"><em>v2.0.0</em> updated 2 days ago</span>
+            <span class="small"><em>v{{ package.version }}</em> updated {{ package.updated * 1000 | daysago }}</span>
           </small>
         </h5>
         <p class="card-text text-muted-primary mb-1">
-          Angular powered Bootstrap
+          {{ package.description }}
         </p>
-        <div class="text-muted-primary mb-4">
-          <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tags']"></fa-icon>
-          <span class="badge badge-primary border round mr-1">Light</span>
-          <span class="badge badge-primary border round mr-1">Light</span>
+        <div class="d-flex flex-row mb-3 text-white">
+          <div class="mr-2 px-1" style="padding-top: 1px">
+            <fa-icon [icon]="['fas', 'arrow-alt-circle-down']"></fa-icon>
+            <ng-template [ngIf]="package.downloadsCount > 1000">
+              {{ package.downloadsCount / 1000 | number:'1.0-0' }}k
+            </ng-template>
+            <ng-template [ngIf]="package.downloadsCount < 1000">
+              {{ package.downloadsCount | number:'1.0-0' }}
+            </ng-template>
+          </div>
+          <div class="mr-2" style="padding-top: 1px">
+            <fa-icon [icon]="['fas', 'star']"></fa-icon>
+            <ng-template [ngIf]="package.stars > 1000">
+              {{ package.stars / 1000 | number:'1.0-0' }}k
+            </ng-template>
+            <ng-template [ngIf]="package.stars < 1000">
+              {{ package.stars | number:'1.0-0' }}
+            </ng-template>
+          </div>
         </div>
-        <!-- <div class="d-flex flex-row text-dark">
-        <div class="mr-2 px-1" style="padding-top: 1px">
-          <fa-icon [icon]="['fas', 'arrow-alt-circle-down']"></fa-icon>
-          <ng-template [ngIf]="result.downloadsCount > 1000">
-            {{ result.downloadsCount / 1000 | number:'1.0-0' }}k
-          </ng-template>
-          <ng-template [ngIf]="result.downloadsCount < 1000">
-            {{ result.downloadsCount | number:'1.0-0' }}
-          </ng-template>
-        </div>
-        <div class="mr-2" style="padding-top: 1px">
-          <fa-icon [icon]="['fas', 'star']"></fa-icon>
-          <ng-template [ngIf]="result.stars > 1000">
-            {{ result.stars / 1000 | number:'1.0-0' }}k
-          </ng-template>
-          <ng-template [ngIf]="result.stars < 1000">
-            {{ result.stars | number:'1.0-0' }}
-          </ng-template>
-        </div>
-      </div> -->
         <div class="text-uppercase">
-          <a class="small mr-2 card-link text-white" href="https://github.com/stroiman/respect#readme">homepage</a>
-          <a class="small mr-2 card-link text-white" href="https://github.com/stroiman/respect">repository</a>
-          <a class="small mr-2 card-link text-white" href="https://www.npmjs.com/package/%40stroiman%2Frespect">npm</a>
-          <a class="small mr-2 card-link text-white" href="https://github.com/stroiman/respect/issues">issues</a>
+          <a class="small mr-2 card-link text-white" [href]="package.homepageUrl">homepage</a>
+          <a class="small mr-2 card-link text-white" [href]="package.repositoryUrl">repository</a>
+          <a class="small mr-2 card-link text-white" [href]="package.npmUrl">npm</a>
+          <a class="small mr-2 card-link text-white" [href]="package.issuesUrl">issues</a>
         </div>
       </div>
     </div>
@@ -52,7 +51,7 @@
 <div class="container mb-3">
   <div class="row">
     <div class="col-12">
-      <div class="px-5 py-3" style="background-color: white" [innerHTML]="readme"></div>
+      <div class="px-5 py-3 readme" style="background-color: white" [innerHTML]="readme"></div>
     </div>
   </div>
 </div>

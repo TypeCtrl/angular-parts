@@ -12,6 +12,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class PackageComponent implements OnInit {
   name = '';
+  package?: any;
   readme: SafeHtml = '';
 
   constructor(
@@ -24,10 +25,16 @@ export class PackageComponent implements OnInit {
     this.route.params.subscribe(params => {
       const scope = params.scope ? params.scope + '/' : '';
       this.name = scope + params.name;
+      this.setup();
     });
-    // todo pass github link
-    this.search.readme().subscribe(res => {
-      this.readme = this.sanitizer.bypassSecurityTrustHtml(res);
+  }
+  setup () {
+    this.search.single(this.name).subscribe(res => {
+      this.package = res.hits[0];
+      console.log(this.package);
+      this.search.readme(this.package.repositoryUrl).subscribe(res => {
+        this.readme = this.sanitizer.bypassSecurityTrustHtml(res);
+      });
     });
   }
 }
