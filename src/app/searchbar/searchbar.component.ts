@@ -1,12 +1,24 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+  AfterContentInit,
+  ElementRef,
+  Renderer2,
+} from '@angular/core';
+import { SearchService } from '../search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
   styles: [
     `
-  .input-group-prepend > .input-group-text {
-    border-right: none;
+  input {
+    font-weight: 300;
   }
   .clear {
     border-left-width: 0;
@@ -18,14 +30,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   `,
   ],
 })
-export class SearchbarComponent implements OnInit {
-  query = '';
-  @Output() queryChange = new EventEmitter<string>();
-  constructor() {}
+export class SearchbarComponent implements OnInit, AfterContentInit {
+  @Input() query = '';
+  @ViewChild('input') input: ElementRef<HTMLInputElement>;
+
+  constructor(private r: Renderer2, private router: Router) {}
 
   ngOnInit() {}
-  handleQueryChange(query: string) {
-    console.log(query);
-    this.queryChange.emit(query);
+  ngAfterContentInit() {
+    this.input.nativeElement.focus();
+  }
+  handleQueryChange(q: string) {
+    console.log(q);
+    this.router.navigate(['/search'], { queryParams: { q } });
   }
 }

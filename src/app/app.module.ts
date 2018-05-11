@@ -11,6 +11,8 @@ import {
   faCalendar,
   faArrowAltCircleDown,
   faStar,
+  faFileArchive,
+  faTags,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { AppComponent } from './app.component';
@@ -20,11 +22,16 @@ import { SearchService } from './search.service';
 import { HomeComponent } from './home/home.component';
 import { CardComponent } from './card/card.component';
 import { DaysagoPipe } from './daysago.pipe';
+import { PackageComponent } from './package/package.component';
+import { SearchComponent } from './search/search.component';
 
-library.add(faCalendar, faArrowAltCircleDown, faStar);
+library.add(faCalendar, faArrowAltCircleDown, faStar, faFileArchive, faTags);
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'package/:name', component: PackageComponent },
+  { path: 'package/:scope/:name', component: PackageComponent },
   { path: '**', component: HomeComponent },
 ];
 
@@ -36,6 +43,8 @@ const routes: Routes = [
     HomeComponent,
     CardComponent,
     DaysagoPipe,
+    PackageComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,17 @@ export class SearchService {
       httpOptions,
     );
   }
+  readme(repo?: string) {
+    return this.httpClient.get(
+      'https://api.github.com/repos/ng-bootstrap/ng-bootstrap/readme',
+      {
+        responseType: 'text',
+        headers: new HttpHeaders({
+          Accept: 'application/vnd.github.html',
+        }),
+      },
+    );
+  }
 }
 
 // curl -X POST \

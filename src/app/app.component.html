@@ -1,30 +1,65 @@
-<header>
-  <app-navigation></app-navigation>
-</header>
-<div class="container-flud">
-  <div class="row">
-    <div class="col-12 pr-lg-0 col-lg-5 col-xl-4 results-column">
-      <div class="bg-light" style="height: 100%">
-        <app-searchbar></app-searchbar>
-        <div class="px-3 pb-2 text-muted">
-          <small>{{ results.length }} results</small>
-        </div>
-        <div class="px-3">
-          <div class="results">
-            <app-card *ngFor="let res of results" [result]="res">
-            </app-card>
+<div style="background-color: whitesmoke;min-height: 100%;">
+  <div style="min-height: 100vh;display: flex;flex-direction: column"
+  routerLinkActive="bg-primary" [routerLinkActiveOptions]="{exact:
+true}">
+    <!-- empty link to activate routerlinkactive -->
+    <a class="d-none" routerLink="/"></a>
+    <div>
+      <app-navigation></app-navigation>
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="footer" style="margin-top: auto;">
+      <div class="container">
+        <div class="row pt-4">
+          <div class="col-3">
+            <h6>Project</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://github.com/TypeCtrl/angular-parts">Source Code Repository</a>
+              </li>
+              <li>
+                <a href="https://github.com/TypeCtrl/angular-parts-data">Package/Data Repository</a>
+              </li>
+              <li>
+                <a href="https://github.com/TypeCtrl/angular-parts/issues">Support / Bug Tracker</a>
+              </li>
+              <li>
+                <a href="/publish">Submit a Package</a>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div>
-          <div class="algolia-wrapper mx-3 mt-2">
-            Search by
-            <a href="https://www.algolia.com/" class="algolia">Algolia</a>
+          <div class="col-3">
+            <h6>Made with</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://npms.io/">npms.io</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <h6>Angular</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://angular.io/">Angular Homepage</a>
+              </li>
+              <li>
+                <a href="https://angular.io/docs">Angular Docs</a>
+              </li>
+              <li>
+                <a href="https://reasonml.github.io/try">Reason Playground</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <div class="d-flex justify-content-end align-items-end text-right" style="height: 100%">
+              <a class="my-2" href="https://www.algolia.com">
+                <img style="height: 1em;opacity: 0.75;" src="/assets/search-by-algolia-white.svg">
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="pl-0 col-12 col-md-6 col-lg-7 col-xl-8">
-      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

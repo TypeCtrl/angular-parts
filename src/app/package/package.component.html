@@ -1,0 +1,58 @@
+<div class="container text-white">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <app-searchbar></app-searchbar>
+    </div>
+    <div class="col-12">
+      <div class="bg-primary pt-5 px-5 pb-3">
+        <h5>
+          {{ name }}
+          <small class="text-muted-primary">
+            <span class="small"><em>v2.0.0</em> updated 2 days ago</span>
+          </small>
+        </h5>
+        <p class="card-text text-muted-primary mb-1">
+          Angular powered Bootstrap
+        </p>
+        <div class="text-muted-primary mb-4">
+          <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tags']"></fa-icon>
+          <span class="badge badge-primary border round mr-1">Light</span>
+          <span class="badge badge-primary border round mr-1">Light</span>
+        </div>
+        <!-- <div class="d-flex flex-row text-dark">
+        <div class="mr-2 px-1" style="padding-top: 1px">
+          <fa-icon [icon]="['fas', 'arrow-alt-circle-down']"></fa-icon>
+          <ng-template [ngIf]="result.downloadsCount > 1000">
+            {{ result.downloadsCount / 1000 | number:'1.0-0' }}k
+          </ng-template>
+          <ng-template [ngIf]="result.downloadsCount < 1000">
+            {{ result.downloadsCount | number:'1.0-0' }}
+          </ng-template>
+        </div>
+        <div class="mr-2" style="padding-top: 1px">
+          <fa-icon [icon]="['fas', 'star']"></fa-icon>
+          <ng-template [ngIf]="result.stars > 1000">
+            {{ result.stars / 1000 | number:'1.0-0' }}k
+          </ng-template>
+          <ng-template [ngIf]="result.stars < 1000">
+            {{ result.stars | number:'1.0-0' }}
+          </ng-template>
+        </div>
+      </div> -->
+        <div class="text-uppercase">
+          <a class="small mr-3 card-link text-white" href="https://github.com/stroiman/respect#readme">homepage</a>
+          <a class="small mr-3 card-link text-white" href="https://github.com/stroiman/respect">repository</a>
+          <a class="small mr-3 card-link text-white" href="https://www.npmjs.com/package/%40stroiman%2Frespect">npm</a>
+          <a class="small mr-3 card-link text-white" href="https://github.com/stroiman/respect/issues">issues</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mb-3">
+  <div class="row">
+    <div class="col-12">
+      <div class="px-5 py-3" style="background-color: white" [innerHTML]="readme"></div>
+    </div>
+  </div>
+</div>
