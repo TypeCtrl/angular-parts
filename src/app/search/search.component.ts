@@ -16,8 +16,10 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.query = this.route.snapshot.queryParams.q || '';
-    this.searchService.search('toastr').subscribe((res) => {
-      console.log(res);
+    this.handleQueryChange();
+  }
+  handleQueryChange() {
+    this.searchService.search(this.query).subscribe((res) => {
       this.results = res.hits;
       this.total = res.nbHits;
     });

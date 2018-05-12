@@ -28,7 +28,10 @@ export class SearchService {
 
   // todo: probably poorly named
   search(query: string) {
+    const params = new HttpParams()
+      .set('query', query);
     const httpOptions = {
+      params,
       headers: new HttpHeaders({
         'X-Algolia-API-Key': '178381a2875a1d2958e062acb2b59fab',
         'X-Algolia-Application-Id': '8HDRK698YZ',

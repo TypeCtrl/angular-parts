@@ -32,6 +32,7 @@ import { Router } from '@angular/router';
 })
 export class SearchbarComponent implements OnInit, AfterContentInit {
   @Input() query = '';
+  @Output() queryChange = new EventEmitter<string>();
   @ViewChild('input') input: ElementRef<HTMLInputElement>;
 
   constructor(private r: Renderer2, private router: Router) {}
@@ -41,7 +42,7 @@ export class SearchbarComponent implements OnInit, AfterContentInit {
     this.input.nativeElement.focus();
   }
   handleQueryChange(q: string) {
-    console.log(q);
+    this.queryChange.emit(q);
     this.router.navigate(['/search'], { queryParams: { q } });
   }
 }
