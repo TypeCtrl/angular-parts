@@ -42,7 +42,15 @@
                 <em class="text-muted-primary">v{{ package.version }}</em>
               </small>
             </td>
-            <td class="text-right text-muted-primary">{{ package.updated * 1000 | daysago }}</td>
+            <td class="text-right text-muted-primary">
+              <fa-icon [icon]="['fas', 'star']"></fa-icon>
+              <ng-template [ngIf]="package.stars > 1000">
+                {{ package.stars / 1000 | number:'1.0-0' }}k
+              </ng-template>
+              <ng-template [ngIf]="package.stars < 1000">
+                {{ package.stars | number:'1.0-0' }}
+              </ng-template>
+            </td>
           </tr>
         </tbody>
       </table>
