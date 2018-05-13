@@ -82,14 +82,21 @@ body {
     border-color: darken($primary, 5%);
   }
 }
+.bg-primary-dark {
+  background-color: darken($primary, 8%);
+  a {
+    color: white;
+  }
+}
+
 .footer {
+  margin-top: auto;
   h6 {
     color: lighten($primary, 12%);
   }
   a {
     color: lighten($primary, 30%);
   }
-  background-color: darken($primary, 5%);
   color: white;
 }
 .text-muted-primary {
@@ -116,6 +123,7 @@ body {
 
 // readme cleanup
 .readme {
+  background-color: white;
   .anchor {
   display: none;
   }
