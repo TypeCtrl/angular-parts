@@ -47,6 +47,15 @@
               {{ package.stars | number:'1.0-0' }}
             </ng-template>
           </div>
+          <div class="mr-2" style="padding-top: 1px" *ngIf="package.rxjs6 !== null">
+            <span *ngIf="package.rxjs6 === true">
+              <fa-icon [icon]="['fas', 'check-circle']"></fa-icon>
+            </span>
+            <span *ngIf="package.rxjs6 === false">
+              <fa-icon [icon]="['fas', 'times-circle']"></fa-icon>
+            </span>
+            rxjs 6
+          </div>
         </div>
       </div>
       <div class="bg-primary-dark px-3 px-md-5 py-2">

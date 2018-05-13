@@ -112,7 +112,7 @@ body {
   .text-muted {
     color: lighten($primary, 40%) !important;
   }
-  .text-primary {
+  .text-primary, .text-success, .text-danger {
     color: white !important;
   }
   .text-dark {
