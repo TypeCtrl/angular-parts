@@ -5,7 +5,9 @@ import { catchError } from 'rxjs/operators';
 
 import { environment } from '../environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class SearchService {
   baseUrl = 'https://8HDRK698YZ-1.algolia.net';
 

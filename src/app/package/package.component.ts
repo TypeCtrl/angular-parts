@@ -6,9 +6,6 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
   selector: 'app-package',
   templateUrl: 'package.component.html',
-  styles: [`
-
-  `],
 })
 export class PackageComponent implements OnInit {
   name = '';
@@ -32,8 +29,8 @@ export class PackageComponent implements OnInit {
     this.search.single(this.name).subscribe(res => {
       this.package = res.hits[0];
       console.log(this.package);
-      this.search.readme(this.package.repositoryUrl).subscribe(res => {
-        this.readme = this.sanitizer.bypassSecurityTrustHtml(res);
+      this.search.readme(this.package.repositoryUrl).subscribe(readme => {
+        this.readme = this.sanitizer.bypassSecurityTrustHtml(readme);
       });
     });
   }

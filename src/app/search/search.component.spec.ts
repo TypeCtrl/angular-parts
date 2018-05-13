@@ -10,7 +10,6 @@ import { SearchComponent } from './search.component';
 import { ResultCardComponent } from './result-card/result-card.component';
 import { SearchbarComponent } from '../searchbar/searchbar.component';
 import { DaysagoPipe } from '../daysago.pipe';
-import { SearchService } from '../search.service';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -18,7 +17,7 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [SearchService],
+      providers: [],
       imports: [
         RouterTestingModule,
         CommonModule,

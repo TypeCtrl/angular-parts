@@ -11,7 +11,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
-import { SearchService } from './search.service';
 import { HomeComponent } from './home/home.component';
 import { ResultCardComponent } from './search/result-card/result-card.component';
 import { DaysagoPipe } from './daysago.pipe';
@@ -50,7 +49,7 @@ const routes: Routes = [
 
     FontAwesomeModule,
   ],
-  providers: [SearchService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

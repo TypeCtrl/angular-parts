@@ -8,7 +8,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home.component';
 import { SearchbarComponent } from '../searchbar/searchbar.component';
 import { DaysagoPipe } from '../daysago.pipe';
-import { SearchService } from '../search.service';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('HomeComponent', () => {
@@ -25,7 +24,7 @@ describe('HomeComponent', () => {
         HttpClientModule,
       ],
       declarations: [HomeComponent, SearchbarComponent, DaysagoPipe],
-      providers: [SearchService],
+      providers: [],
     }).compileComponents();
   }));
 
