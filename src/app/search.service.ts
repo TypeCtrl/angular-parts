@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
 import { catchError } from 'rxjs/operators';
+
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class SearchService {
   baseUrl = 'https://8HDRK698YZ-1.algolia.net';
+
   constructor(private httpClient: HttpClient) {}
 
   single(packageName: string) {
@@ -15,10 +19,7 @@ export class SearchService {
       .append('restrictSearchableAttributes', 'name');
     const httpOptions = {
       params,
-      headers: new HttpHeaders({
-        'X-Algolia-API-Key': '178381a2875a1d2958e062acb2b59fab',
-        'X-Algolia-Application-Id': '8HDRK698YZ',
-      }),
+      headers: new HttpHeaders(environment.algoliaHeaders),
     };
     return this.httpClient.get<any>(
       `${this.baseUrl}/1/indexes/packages/`,
@@ -30,10 +31,7 @@ export class SearchService {
   search(query: string) {
     const httpOptions = {
       params: new HttpParams().set('query', query),
-      headers: new HttpHeaders({
-        'X-Algolia-API-Key': '178381a2875a1d2958e062acb2b59fab',
-        'X-Algolia-Application-Id': '8HDRK698YZ',
-      }),
+      headers: new HttpHeaders(environment.algoliaHeaders),
     };
     return this.httpClient.get<any>(
       `${this.baseUrl}/1/indexes/packages`,
@@ -43,13 +41,20 @@ export class SearchService {
   recent() {
     const httpOptions = {
       params: new HttpParams().set('hitsPerPage', '10'),
-      headers: new HttpHeaders({
-        'X-Algolia-API-Key': '178381a2875a1d2958e062acb2b59fab',
-        'X-Algolia-Application-Id': '8HDRK698YZ',
-      }),
+      headers: new HttpHeaders(environment.algoliaHeaders),
     };
     return this.httpClient.get<any>(
       `${this.baseUrl}/1/indexes/updated`,
+      httpOptions,
+    );
+  }
+  popular() {
+    const httpOptions = {
+      params: new HttpParams().set('hitsPerPage', '10'),
+      headers: new HttpHeaders(environment.algoliaHeaders),
+    };
+    return this.httpClient.get<any>(
+      `${this.baseUrl}/1/indexes/popularity`,
       httpOptions,
     );
   }

@@ -5,24 +5,26 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styles: []
+  styles: [],
 })
 export class SearchComponent implements OnInit {
   query = '';
   results: any[] = [];
   total = 0;
 
-  constructor(private searchService: SearchService, private route: ActivatedRoute) {}
+  constructor(
+    private searchService: SearchService,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
     this.query = this.route.snapshot.queryParams.q || '';
     this.handleQueryChange();
   }
   handleQueryChange() {
-    this.searchService.search(this.query).subscribe((res) => {
+    this.searchService.search(this.query).subscribe(res => {
       this.results = res.hits;
       this.total = res.nbHits;
     });
   }
-
 }

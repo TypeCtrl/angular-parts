@@ -8,10 +8,14 @@ import { SearchService } from '../search.service';
 })
 export class HomeComponent implements OnInit {
   recent: any[] = [];
+  popular: any[] = [];
   constructor(private search: SearchService) {}
   ngOnInit() {
     this.search.recent().subscribe((res) => {
       this.recent = res.hits;
+    });
+    this.search.popular().subscribe((res) => {
+      this.popular = res.hits;
     });
   }
 }

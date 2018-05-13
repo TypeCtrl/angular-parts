@@ -35,68 +35,14 @@
       <hr class="my-2">
       <table class="table table-borderless table-sm">
         <tbody>
-          <tr>
+          <tr *ngFor="let package of popular">
             <td>
-              <a class="text-white mr-1" href="#">@ng-bootstrap/ng-bootstrap</a>
+              <a class="text-white mr-1" [routerLink]="'/package/' + package.name">{{ package.name }}</a>
               <small>
-                <em class="text-muted-primary">v2.0.0</em>
+                <em class="text-muted-primary">v{{ package.version }}</em>
               </small>
             </td>
-            <td class="text-right text-muted-primary">2 days ago</td>
-          </tr>
-          <tr>
-            <td>
-              <a class="text-white mr-1" href="#">@ng-bootstrap/ng-bootstrap</a>
-              <small>
-                <em class="text-muted-primary">v2.0.0</em>
-              </small>
-            </td>
-            <td class="text-right text-muted-primary">2 days ago</td>
-          </tr>
-          <tr>
-            <td>
-              <a class="text-white mr-1" href="#">@ng-bootstrap/ng-bootstrap</a>
-              <small>
-                <em class="text-muted-primary">v2.0.0</em>
-              </small>
-            </td>
-            <td class="text-right text-muted-primary">2 days ago</td>
-          </tr>
-          <tr>
-            <td>
-              <a class="text-white mr-1" href="#">@ng-bootstrap/ng-bootstrap</a>
-              <small>
-                <em class="text-muted-primary">v2.0.0</em>
-              </small>
-            </td>
-            <td class="text-right text-muted-primary">2 days ago</td>
-          </tr>
-          <tr>
-            <td>
-              <a class="text-white mr-1" href="#">@ng-bootstrap/ng-bootstrap</a>
-              <small>
-                <em class="text-muted-primary">v2.0.0</em>
-              </small>
-            </td>
-            <td class="text-right text-muted-primary">2 days ago</td>
-          </tr>
-          <tr>
-            <td>
-              <a class="text-white mr-1" href="#">@ng-bootstrap/ng-bootstrap</a>
-              <small>
-                <em class="text-muted-primary">v2.0.0</em>
-              </small>
-            </td>
-            <td class="text-right text-muted-primary">2 days ago</td>
-          </tr>
-          <tr>
-            <td>
-              <a class="text-white mr-1" href="#">@ng-bootstrap/ng-bootstrap</a>
-              <small>
-                <em class="text-muted-primary">v2.0.0</em>
-              </small>
-            </td>
-            <td class="text-right text-muted-primary">2 days ago</td>
+            <td class="text-right text-muted-primary">{{ package.updated * 1000 | daysago }}</td>
           </tr>
         </tbody>
       </table>
