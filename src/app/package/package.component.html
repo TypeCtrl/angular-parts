@@ -16,7 +16,7 @@
           </div>
           <!-- tags for desktop -->
           <div class="text-muted-primary mb-2 text-right d-none d-md-inline">
-            <span class="badge badge-primary border round mr-1" *ngFor="let tag of package._tags">{{ tag }}</span>
+            <a class="badge badge-primary border round mr-1" [routerLink]="['/tag', tag]" *ngFor="let tag of package._tags">{{ tag }}</a>
             <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tags']"></fa-icon>
           </div>
         </div>
@@ -26,7 +26,7 @@
         <!-- tags for mobile -->
         <div class="text-muted-primary mb-2 d-md-none">
           <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tags']"></fa-icon>
-          <span class="badge badge-primary border round mr-1" *ngFor="let tag of package._tags">{{ tag }}</span>
+          <a class="badge badge-primary border round mr-1" [routerLink]="['/tag', tag]" *ngFor="let tag of package._tags">{{ tag }}</a>
         </div>
         <div class="d-flex flex-row text-white">
           <div class="mr-2 px-1" style="padding-top: 1px" ngbTooltip="Downloads">

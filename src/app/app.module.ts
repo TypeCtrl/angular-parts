@@ -7,14 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faCalendar,
-  faArrowAltCircleDown,
-  faStar,
-  faFileArchive,
-  faTags,
-} from '@fortawesome/free-solid-svg-icons';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -25,14 +17,14 @@ import { ResultCardComponent } from './search/result-card/result-card.component'
 import { DaysagoPipe } from './daysago.pipe';
 import { PackageComponent } from './package/package.component';
 import { SearchComponent } from './search/search.component';
-
-library.add(faCalendar, faArrowAltCircleDown, faStar, faFileArchive, faTags);
+import { BrowseTagComponent } from './browse-tag/browse-tag.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'search', component: SearchComponent },
   { path: 'package/:name', component: PackageComponent },
   { path: 'package/:scope/:name', component: PackageComponent },
+  { path: 'tag/:tag', component: BrowseTagComponent },
   { path: '**', redirectTo: '/' },
 ];
 
@@ -46,6 +38,7 @@ const routes: Routes = [
     DaysagoPipe,
     PackageComponent,
     SearchComponent,
+    BrowseTagComponent,
   ],
   imports: [
     BrowserModule,

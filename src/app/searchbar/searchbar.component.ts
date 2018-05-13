@@ -43,6 +43,9 @@ export class SearchbarComponent implements OnInit, AfterContentInit {
   }
   handleQueryChange(q: string) {
     this.queryChange.emit(q);
-    this.router.navigate(['/search'], { queryParams: { q } });
+    this.router.navigate(['/search'], {
+      queryParams: { q },
+      replaceUrl: this.router.url.startsWith('/search'),
+    });
   }
 }

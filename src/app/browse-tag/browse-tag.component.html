@@ -1,0 +1,22 @@
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <app-searchbar></app-searchbar>
+    </div>
+    <div class="col-12">
+      <h4>
+        <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tag']"></fa-icon>
+        {{ tag | titlecase }}
+      </h4>
+      <div class="pb-2 text-muted">
+        <small>{{ total }} results</small>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="results">
+        <app-result-card *ngFor="let res of results" [result]="res">
+        </app-result-card>
+      </div>
+    </div>
+  </div>
+</div>

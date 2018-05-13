@@ -58,6 +58,16 @@ export class SearchService {
       httpOptions,
     );
   }
+  tag(tag: string) {
+    const httpOptions = {
+      params: new HttpParams().set('tagFilters', tag),
+      headers: new HttpHeaders(environment.algoliaHeaders),
+    };
+    return this.httpClient.get<any>(
+      `${this.baseUrl}/1/indexes/popularity`,
+      httpOptions,
+    );
+  }
   readme(repo: string) {
     const pkg = repo.split('https://github.com/')[1];
     return this.httpClient.get(`https://api.github.com/repos/${pkg}/readme`, {
