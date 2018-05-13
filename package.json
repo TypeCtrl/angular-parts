@@ -8,7 +8,7 @@
     "build": "ng build --prod --no-progress",
     "test": "ng test --single-run --browsers=ChromeCI",
     "test:watch": "ng test --browsers=ChromeCI",
-    "test:ci": "ng test --code-coverage --single-run --no-progress --browsers=ChromeCI",
+    "test:ci": "ng test --code-coverage --watch=false --no-progress --browsers=ChromeCI",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ghpages": "ng build --prod --no-progress --baseHref='/angular-parts/'"
