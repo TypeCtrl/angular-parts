@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'package/:name', component: PackageComponent },
   { path: 'package/:scope/:name', component: PackageComponent },
-  { path: '**', component: HomeComponent },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({

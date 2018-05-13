@@ -28,10 +28,8 @@ export class SearchService {
 
   // todo: probably poorly named
   search(query: string) {
-    const params = new HttpParams()
-      .set('query', query);
     const httpOptions = {
-      params,
+      params: new HttpParams().set('query', query),
       headers: new HttpHeaders({
         'X-Algolia-API-Key': '178381a2875a1d2958e062acb2b59fab',
         'X-Algolia-Application-Id': '8HDRK698YZ',
@@ -39,6 +37,19 @@ export class SearchService {
     };
     return this.httpClient.get<any>(
       `${this.baseUrl}/1/indexes/packages`,
+      httpOptions,
+    );
+  }
+  recent() {
+    const httpOptions = {
+      params: new HttpParams().set('hitsPerPage', '10'),
+      headers: new HttpHeaders({
+        'X-Algolia-API-Key': '178381a2875a1d2958e062acb2b59fab',
+        'X-Algolia-Application-Id': '8HDRK698YZ',
+      }),
+    };
+    return this.httpClient.get<any>(
+      `${this.baseUrl}/1/indexes/updated`,
       httpOptions,
     );
   }

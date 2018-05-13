@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --prod --no-progress",
     "test": "ng test --single-run --browsers=ChromeCI",
     "test:watch": "ng test --browsers=ChromeCI",
     "test:ci": "ng test --code-coverage --single-run --no-progress --browsers=ChromeCI",
