@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleTagManager } from 'angulartics2/gtm';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -17,6 +19,7 @@ import { DaysagoPipe } from './daysago.pipe';
 import { PackageComponent } from './package/package.component';
 import { SearchComponent } from './search/search.component';
 import { BrowseTagComponent } from './browse-tag/browse-tag.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -38,6 +41,7 @@ const routes: Routes = [
     PackageComponent,
     SearchComponent,
     BrowseTagComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ const routes: Routes = [
     NgbTooltipModule.forRoot(),
 
     FontAwesomeModule,
+    Angulartics2Module.forRoot([Angulartics2GoogleTagManager]),
   ],
   providers: [],
   bootstrap: [AppComponent],
