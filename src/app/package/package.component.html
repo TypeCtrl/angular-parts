@@ -48,13 +48,11 @@
             </ng-template>
           </div>
           <div class="mr-2" style="padding-top: 1px" *ngIf="package.rxjs6 !== null">
-            <span *ngIf="package.rxjs6 === true">
-              <fa-icon [icon]="['fas', 'check-circle']"></fa-icon>
+            <span [ngbTooltip]="'rxjs: ' + package.peerDependencies.rxjs">
+              <fa-icon *ngIf="package.rxjs6 === true" [icon]="['fas', 'check-circle']"></fa-icon>
+              <fa-icon *ngIf="package.rxjs6 === false" [icon]="['fas', 'times-circle']"></fa-icon>
+              rxjs 6
             </span>
-            <span *ngIf="package.rxjs6 === false">
-              <fa-icon [icon]="['fas', 'times-circle']"></fa-icon>
-            </span>
-            rxjs 6
           </div>
         </div>
       </div>
