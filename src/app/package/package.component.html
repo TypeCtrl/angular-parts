@@ -10,9 +10,12 @@
             <h4 class="d-inline">
               {{ package.name }}
             </h4>
-            <p class="d-inline text-muted-primary">
-              <span class="small"><em>v{{ package.version }}</em> updated {{ package.updated * 1000 | daysago }}</span>
-            </p>
+            <div class="mb-1 d-md-inline text-muted-primary">
+              <span class="small">
+                <em>v{{ package.version }}</em>
+                updated {{ package.updated * 1000 | daysago }}
+              </span>
+            </div>
           </div>
           <!-- tags for desktop -->
           <div class="text-muted-primary mb-2 text-right d-none d-md-inline">
@@ -20,7 +23,7 @@
             <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tags']"></fa-icon>
           </div>
         </div>
-        <p class="card-text text-muted-primary mb-2">
+        <p class="card-text mb-2">
           {{ package.description }}
         </p>
         <!-- tags for mobile -->

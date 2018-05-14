@@ -22,7 +22,6 @@
               "src/_redirects"
             ],
             "styles": [
-              "node_modules/typeface-roboto/index.css",
               "src/styles.scss"
             ],
             "scripts": []
