@@ -11,9 +11,9 @@
 </div>
 
 
-<div class="container text-white">
+<div class="container text-white mb-3">
   <div class="row justify-content-around">
-    <div class="col-12 col-md-5 small">
+    <div class="col-12 col-md-6 col-lg-5 small">
       <h6 class="text-center text-uppercase">Recent Releases</h6>
       <hr class="my-2">
       <table class="table table-borderless table-sm">
@@ -25,12 +25,14 @@
                 <em class="text-muted-primary">v{{ package.version }}</em>
               </small>
             </td>
-            <td class="text-right text-muted-primary">{{ package.updated * 1000 | daysago }}</td>
+            <td class="text-right text-muted-primary text-nowrap">
+              {{ package.updated * 1000 | daysago }}
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="col-12 col-md-5 small">
+    <div class="col-12 col-md-6 col-md-5 small">
       <h6 class="text-center text-uppercase">Most Popular</h6>
       <hr class="my-2">
       <table class="table table-borderless table-sm">
