@@ -5,7 +5,7 @@
     </div>
     <div class="col-12" *ngIf="package">
       <div class="bg-primary pt-3 px-3 pt-md-5 px-md-5 pb-4">
-        <div class="mb-2 d-flex justify-content-between">
+        <div class="mb-1 d-flex justify-content-between">
           <div>
             <h4 class="d-inline">
               {{ package.name }}
@@ -23,19 +23,19 @@
             <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tags']"></fa-icon>
           </div>
         </div>
-        <p class="card-text mb-3">
+        <p class="card-text mb-2">
           {{ package.description }}
         </p>
         <!-- tags for mobile -->
-        <div class="text-muted-primary mb-2 d-md-none">
+        <div class="text-muted-primary mb-3 d-md-none">
           <fa-icon class="mr-1 mt-1"
             [styles]="{'vertical-align': 'text-bottom'}"
             [icon]="['fas', 'tags']">
           </fa-icon>
           <a class="badge badge-primary border round mr-1" [routerLink]="['/tag', tag]" *ngFor="let tag of package._tags">{{ tag }}</a>
         </div>
-        <div class="d-flex flex-row text-white">
-          <div class="mr-2 px-1" ngbTooltip="Downloads Last Month">
+        <div class="d-flex flex-wrap">
+          <div class="mr-3" ngbTooltip="Downloads Last Month">
             <fa-icon [icon]="['fas', 'arrow-alt-circle-down']"></fa-icon>
             <ng-template [ngIf]="package.downloadsCount > 1000">
               {{ package.downloadsCount / 1000 | number:'1.0-0' }}k
@@ -44,7 +44,7 @@
               {{ package.downloadsCount | number:'1.0-0' }}
             </ng-template>
           </div>
-          <div class="mr-2" ngbTooltip="GitHub Stars">
+          <div class="mr-3" ngbTooltip="GitHub Stars">
             <fa-icon [icon]="['fas', 'star']"></fa-icon>
             <ng-template [ngIf]="package.stars > 1000">
               {{ package.stars / 1000 | number:'1.0-0' }}k
@@ -53,25 +53,42 @@
               {{ package.stars | number:'1.0-0' }}
             </ng-template>
           </div>
-          <div class="mr-2 px-1" *ngIf="package.license !== null" ngbTooltip="License">
+          <div class="mr-3" *ngIf="package.license !== null" ngbTooltip="License">
             {{ package.license }}
           </div>
-          <div class="mr-2" *ngIf="package.rxjs6 !== null">
-            <span [ngbTooltip]="'rxjs: ' + package.peerDependencies.rxjs">
-              <fa-icon *ngIf="package.rxjs6 === true" [icon]="['fas', 'check-circle']"></fa-icon>
-              <fa-icon *ngIf="package.rxjs6 === false" [icon]="['fas', 'times-circle']"></fa-icon>
+          <div class="mr-3">
+            <span ngbTooltip="Works with rxjs 6" *ngIf="package.rxjs6 === true">
+              <fa-icon [icon]="['fas', 'check-circle']"></fa-icon>
               rxjs 6
+            </span>
+            <span ngbTooltip="Requires an old version" *ngIf="package.rxjs6 === false">
+              <fa-icon [icon]="['fas', 'times-circle']"></fa-icon>
+              rxjs 6
+            </span>
+            <span class="text-muted-primary" ngbTooltip="Not required or not declared" *ngIf="package.rxjs6 === null">
+              rxjs 6
+            </span>
+          </div>
+          <div class="mr-3">
+            <span ngbTooltip="Works with Angular 6" *ngIf="package.angular6 === true">
+              <fa-icon [icon]="['fas', 'check-circle']"></fa-icon>
+              angular 6
+            </span>
+            <span ngbTooltip="Requires an old version" *ngIf="package.angular6 === false">
+              <fa-icon [icon]="['fas', 'times-circle']"></fa-icon>
+              angular 6
+            </span>
+            <span class="text-muted-primary" ngbTooltip="Not required or not declared" *ngIf="package.angular6 === null">
+              angular 6
             </span>
           </div>
         </div>
       </div>
-      <div class="bg-primary-dark px-3 px-md-5 py-2">
-        <div class="text-uppercase">
-          <a class="small mr-2 card-link" [href]="package.homepageUrl" *ngIf="package.homepageUrl">homepage</a>
-          <a class="small mr-2 card-link" [href]="package.repositoryUrl" *ngIf="package.repositoryUrl">repository</a>
-          <a class="small mr-2 card-link" [href]="package.npmUrl" *ngIf="package.npmUrl">npm</a>
-          <a class="small mr-2 card-link" [href]="package.issuesUrl" *ngIf="package.issuesUrl">issues</a>
-        </div>
+      <div class="bg-primary-dark px-3 px-md-5 py-2 text-uppercase">
+        <a class="small mr-2 card-link" [href]="package.homepageUrl" *ngIf="package.homepageUrl">homepage</a>
+        <a class="small mr-2 card-link" [href]="package.repositoryUrl" *ngIf="package.repositoryUrl">repository</a>
+        <a class="small mr-2 card-link" [href]="package.npmUrl" *ngIf="package.npmUrl">npm</a>
+        <a class="small mr-2 card-link" [href]="package.issuesUrl" *ngIf="package.issuesUrl">issues</a>
       </div>
     </div>
   </div>

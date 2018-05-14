@@ -27,14 +27,31 @@
             {{ result.stars | number:'1.0-0' }}
           </ng-template>
         </div>
-        <div class="mr-2" style="padding-top: 1px" *ngIf="result.rxjs6 !== null">
-          <span class="text-success" *ngIf="result.rxjs6 === true">
+        <div class="mr-2">
+          <span ngbTooltip="Works with rxjs 6" *ngIf="result.rxjs6 === true">
             <fa-icon [icon]="['fas', 'check-circle']"></fa-icon>
+            rxjs 6
           </span>
-          <span class="text-danger" *ngIf="result.rxjs6 === false">
+          <span ngbTooltip="Requires an old version" *ngIf="result.rxjs6 === false">
             <fa-icon [icon]="['fas', 'times-circle']"></fa-icon>
+            rxjs 6
           </span>
-          rxjs 6
+          <span class="text-muted" ngbTooltip="Not required or not declared" *ngIf="result.rxjs6 === null">
+            rxjs 6
+          </span>
+        </div>
+        <div class="mr-2">
+          <span ngbTooltip="Works with Angular 6" *ngIf="result.angular6 === true">
+            <fa-icon [icon]="['fas', 'check-circle']"></fa-icon>
+            angular 6
+          </span>
+          <span ngbTooltip="Requires an old version" *ngIf="result.angular6 === false">
+            <fa-icon [icon]="['fas', 'times-circle']"></fa-icon>
+            angular 6
+          </span>
+          <span class="text-muted" ngbTooltip="Not required or not declared" *ngIf="result.angular6 === null">
+            angular 6
+          </span>
         </div>
       </div>
     </div>
