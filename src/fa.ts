@@ -20,5 +20,5 @@ library.add(
   faTag,
   faCheckCircle,
   faTimesCircle,
-  faMinusCircle,,
+  faMinusCircle,
 );
