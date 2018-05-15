@@ -19,7 +19,7 @@ export class SearchService {
       headers: new HttpHeaders(environment.algoliaHeaders),
     };
     return this.httpClient.get<any>(
-      `${this.baseUrl}/1/indexes/packages/${objectId}`,
+      `${this.baseUrl}/1/indexes/packages/${encodeURIComponent(objectId)}`,
       httpOptions,
     );
   }
