@@ -28,9 +28,23 @@ export class PackageComponent implements OnInit {
   setup() {
     this.search.single(this.name).subscribe(res => {
       this.package = res;
-      this.search.readme(this.package.repositoryUrl).subscribe(readme => {
-        this.readme = this.sanitizer.bypassSecurityTrustHtml(readme);
-      });
+      this.loadReadme();
+    });
+  }
+  loadReadme() {
+    let github = this.package.repositoryUrl || this.package.homepageUrl;
+    if (!github.includes('github.com')) {
+      // TODO: show readme failed
+      return;
+    }
+    try {
+      // if by chance it used homepage url remove anchor
+      github = github.split('#')[0];
+    } catch (e) {
+
+    }
+    this.search.readme(github).subscribe(readme => {
+      this.readme = this.sanitizer.bypassSecurityTrustHtml(readme);
     });
   }
 }
