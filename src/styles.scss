@@ -88,9 +88,14 @@ body {
   }
 }
 
+.text-whitesmoke {
+  color: whitesmoke !important;
+}
+
 .footer {
+  font-size: 80%;
   margin-top: auto;
-  h6 {
+  strong {
     color: lighten($primary, 12%);
   }
   a {
@@ -124,7 +129,7 @@ body {
 .readme {
   background-color: white;
   .anchor {
-  display: none;
+    display: none;
   }
   pre {
     padding: 1em;

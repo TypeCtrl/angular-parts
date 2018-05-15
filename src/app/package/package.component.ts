@@ -25,9 +25,9 @@ export class PackageComponent implements OnInit {
       this.setup();
     });
   }
-  setup () {
+  setup() {
     this.search.single(this.name).subscribe(res => {
-      this.package = res.hits[0];
+      this.package = res;
       this.search.readme(this.package.repositoryUrl).subscribe(readme => {
         this.readme = this.sanitizer.bypassSecurityTrustHtml(readme);
       });

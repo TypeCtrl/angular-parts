@@ -13,18 +13,13 @@ export class SearchService {
 
   constructor(private httpClient: HttpClient) {}
 
-  single(packageName: string) {
-    // TODO: cache from search
-    const params = new HttpParams()
-      .set('query', packageName)
-      .set('hitsPerPage', '1')
-      .append('restrictSearchableAttributes', 'name');
+  single(objectId: string) {
+    // TODO: cache from search as well
     const httpOptions = {
-      params,
       headers: new HttpHeaders(environment.algoliaHeaders),
     };
     return this.httpClient.get<any>(
-      `${this.baseUrl}/1/indexes/packages/`,
+      `${this.baseUrl}/1/indexes/packages/${objectId}`,
       httpOptions,
     );
   }
