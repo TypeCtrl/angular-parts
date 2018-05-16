@@ -20,6 +20,7 @@ import { PackageComponent } from './package/package.component';
 import { SearchComponent } from './search/search.component';
 import { BrowseTagComponent } from './browse-tag/browse-tag.component';
 import { FooterComponent } from './footer/footer.component';
+import { SubmitComponent } from './submit/submit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'package/:name', component: PackageComponent },
   { path: 'package/:scope/:name', component: PackageComponent },
   { path: 'tag/:tag', component: BrowseTagComponent },
+  { path: 'submit', component: SubmitComponent },
   { path: '**', redirectTo: '/' },
 ];
 
@@ -42,6 +44,7 @@ const routes: Routes = [
     SearchComponent,
     BrowseTagComponent,
     FooterComponent,
+    SubmitComponent,
   ],
   imports: [
     BrowserModule,

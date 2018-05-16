@@ -8,6 +8,7 @@ import {
   faCheckCircle,
   faTimesCircle,
   faMinusCircle,
+  faQuestionCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -21,4 +22,5 @@ library.add(
   faCheckCircle,
   faTimesCircle,
   faMinusCircle,
+  faQuestionCircle,
 );

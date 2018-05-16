@@ -74,6 +74,13 @@ export class SearchService {
       }),
     });
   }
+
+  submitPackage(pack: any) {
+    return this.httpClient.post<any>(
+      'https://us-central1-angular-parts.cloudfunctions.net/submitPackage',
+      pack,
+    );
+  }
 }
 
 // curl -X POST \
