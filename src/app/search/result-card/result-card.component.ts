@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-result-card',
@@ -8,12 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
     text-decoration: none;
   }
   `],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ResultCardComponent implements OnInit {
+export class ResultCardComponent {
   @Input() result: any = {};
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

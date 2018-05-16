@@ -9,7 +9,7 @@
       </h6>
       <p class="card-text text-dark mb-2">{{ result.description }}</p>
       <div class="d-flex flex-row text-dark">
-        <div class="mr-2 px-1" style="padding-top: 1px">
+        <div class="mr-2 px-1" style="padding-top: 1px" ngbTooltip="Downloads Last Month">
           <fa-icon [icon]="['fas', 'arrow-alt-circle-down']"></fa-icon>
           <ng-template [ngIf]="result.downloadsCount > 1000">
             {{ result.downloadsCount / 1000 | number:'1.0-0' }}k
@@ -18,7 +18,7 @@
             {{ result.downloadsCount | number:'1.0-0' }}
           </ng-template>
         </div>
-        <div class="mr-2" style="padding-top: 1px">
+        <div class="mr-2" style="padding-top: 1px" ngbTooltip="GitHub Stars">
           <fa-icon [icon]="['fas', 'star']"></fa-icon>
           <ng-template [ngIf]="result.stars > 1000">
             {{ result.stars / 1000 | number:'1.0-0' }}k
