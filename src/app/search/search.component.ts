@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
 import { ActivatedRoute } from '@angular/router';
 
+declare var dataLayer: any;
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -22,6 +24,9 @@ export class SearchComponent implements OnInit {
     this.handleQueryChange();
   }
   handleQueryChange() {
+    dataLayer.push('event', 'conversion', {
+      send_to: 'AW-997285583/dMSCCPP174IBEM-9xdsD',
+    });
     this.searchService.search(this.query).subscribe(res => {
       this.results = res.hits;
       this.total = res.nbHits;
