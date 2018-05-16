@@ -85,10 +85,14 @@
         </div>
       </div>
       <div class="bg-primary-dark px-3 px-md-5 py-2 text-uppercase">
-        <a class="small mr-2 card-link" [href]="package.homepageUrl" *ngIf="package.homepageUrl">homepage</a>
-        <a class="small mr-2 card-link" [href]="package.repositoryUrl" *ngIf="package.repositoryUrl">repository</a>
         <a class="small mr-2 card-link" [href]="package.npmUrl" *ngIf="package.npmUrl">npm</a>
+        <span class="small mr-2 card-link disabled" *ngIf="!package.npmUrl">npm</span>
+        <a class="small mr-2 card-link" [href]="package.repositoryUrl" *ngIf="package.repositoryUrl">repository</a>
+        <span class="small mr-2 card-link text-muted-primary" *ngIf="!package.repositoryUrl">repository</span>
+        <a class="small mr-2 card-link" [href]="package.homepageUrl" *ngIf="package.homepageUrl">homepage</a>
+        <span class="small mr-2 card-link text-muted-primary" *ngIf="!package.homepageUrl">homepage</span>
         <a class="small mr-2 card-link" [href]="package.issuesUrl" *ngIf="package.issuesUrl">issues</a>
+        <span class="small mr-2 card-link text-muted-primary" *ngIf="!package.issuesUrl">issues</span>
       </div>
     </div>
   </div>
