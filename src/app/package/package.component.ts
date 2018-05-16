@@ -11,6 +11,7 @@ export class PackageComponent implements OnInit {
   name = '';
   package?: any;
   readme: SafeHtml = '';
+  readmeFailed = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,9 +33,10 @@ export class PackageComponent implements OnInit {
     });
   }
   loadReadme() {
+    this.readmeFailed = false;
     let github = this.package.repositoryUrl || this.package.homepageUrl;
     if (!github || !github.includes('github.com')) {
-      // TODO: show readme failed
+      this.readmeFailed = true;
       return;
     }
     try {

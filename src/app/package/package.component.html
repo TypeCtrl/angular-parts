@@ -19,7 +19,9 @@
           </div>
           <!-- tags for desktop -->
           <div class="text-muted-primary mb-2 text-right d-none d-md-inline">
-            <a class="badge badge-primary border round mr-1" [routerLink]="['/tag', tag]" *ngFor="let tag of package._tags">{{ tag }}</a>
+            <a class="badge badge-primary border round mr-1" [routerLink]="['/tag', tag]" *ngFor="let tag of package._tags">
+              {{ tag }}
+            </a>
             <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tags']"></fa-icon>
           </div>
         </div>
@@ -100,7 +102,10 @@
 <div class="container mb-3">
   <div class="row">
     <div class="col-12">
-      <div class="p-2 px-md-5 py-md-3 readme" [innerHTML]="readme"></div>
+      <div class="p-2 px-md-5 py-md-3 readme" >
+        <h3 *ngIf="readmeFailed" class="mb-0">Readme Not Found</h3>
+      </div>
+      <div *ngIf="!readmeFailed" class="p-2 px-md-5 py-md-3 readme" [innerHTML]="readme"></div>
     </div>
   </div>
 </div>
