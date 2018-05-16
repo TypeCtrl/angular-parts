@@ -33,7 +33,7 @@ export class PackageComponent implements OnInit {
   }
   loadReadme() {
     let github = this.package.repositoryUrl || this.package.homepageUrl;
-    if (!github.includes('github.com')) {
+    if (!github || !github.includes('github.com')) {
       // TODO: show readme failed
       return;
     }
