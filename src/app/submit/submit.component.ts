@@ -4,7 +4,6 @@ import { SearchService } from '../search.service';
 @Component({
   selector: 'app-submit',
   templateUrl: './submit.component.html',
-  styles: [],
 })
 export class SubmitComponent {
   name = '';
