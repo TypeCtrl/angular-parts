@@ -22,10 +22,16 @@ import { Router } from '@angular/router';
   }
   .clear {
     border-left-width: 0;
+    cursor: pointer;
+  }
+  .input-group-text {
+    color: #ced4da;
+  }
+  .clear:hover {
+    color: #4c5565;
   }
   .form-control {
     border-left-width: 0;
-    border-right-width: 0;
   }
   `,
   ],
@@ -41,11 +47,19 @@ export class SearchbarComponent implements OnInit, AfterContentInit {
   ngAfterContentInit() {
     this.input.nativeElement.focus();
   }
-  handleQueryChange(q: string) {
-    this.queryChange.emit(q);
+  handleQueryChange() {
+    this.queryChange.emit(this.query);
+    const queryParams: any = {};
+    if (this.query) {
+      queryParams.q = this.query;
+    }
     this.router.navigate(['/search'], {
-      queryParams: { q },
+      queryParams,
       replaceUrl: this.router.url.startsWith('/search'),
     });
+  }
+  clear() {
+    this.query = '';
+    this.handleQueryChange();
   }
 }

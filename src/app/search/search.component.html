@@ -8,8 +8,9 @@
     </div>
     <div class="col-12">
       <div class="results">
-        <app-result-card *ngFor="let res of results" [result]="res">
-        </app-result-card>
+        <ng-template ngFor let-res [ngForOf]="results" [ngForTrackBy]="trackBy">
+          <app-result-card [result]="res"></app-result-card>
+        </ng-template>
       </div>
     </div>
   </div>

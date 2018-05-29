@@ -11,10 +11,13 @@ export class BrowseTagComponent implements OnInit {
   results = [];
   total = 0;
 
-  constructor(private route: ActivatedRoute, private searchService: SearchService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private searchService: SearchService,
+  ) {}
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
+    this.route.params.subscribe(params => {
       this.tag = params.tag;
       this.browse();
     });
@@ -25,5 +28,7 @@ export class BrowseTagComponent implements OnInit {
       this.total = res.nbHits;
     });
   }
-
+  trackBy(idx: number, res: any) {
+    return res.name;
+  }
 }

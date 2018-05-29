@@ -32,4 +32,7 @@ export class SearchComponent implements OnInit {
       this.total = res.nbHits;
     });
   }
+  trackBy(idx: number, res: any) {
+    return res.name;
+  }
 }

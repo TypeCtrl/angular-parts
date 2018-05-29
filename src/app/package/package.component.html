@@ -4,7 +4,7 @@
       <app-searchbar></app-searchbar>
     </div>
     <div class="col-12" *ngIf="package">
-      <div class="bg-primary pt-3 px-3 pt-md-5 px-md-5 pb-4">
+      <div class="bg-primary rounded-top pt-3 px-3 pt-md-5 px-md-5 pb-4">
         <div class="mb-1 d-flex justify-content-between">
           <div>
             <h4 class="d-inline">
@@ -102,10 +102,10 @@
 <div class="container mb-3">
   <div class="row">
     <div class="col-12">
-      <div class="p-2 px-md-5 py-md-3 readme" >
+      <div class="p-2 px-md-5 py-md-3 readme rounded-bottom">
         <h3 *ngIf="readmeFailed" class="mb-0">Readme Not Found</h3>
       </div>
-      <div *ngIf="!readmeFailed" class="p-2 px-md-5 py-md-3 readme" [innerHTML]="readme"></div>
+      <div *ngIf="!readmeFailed" class="p-2 px-md-5 py-md-3 readme rounded-bottom" [innerHTML]="readme"></div>
     </div>
   </div>
 </div>

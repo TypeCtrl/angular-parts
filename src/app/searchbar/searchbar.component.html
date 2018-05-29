@@ -1,23 +1,23 @@
-<div class="pt-3">
+<div class="pt-2">
   <div class="input-group input-group-lg pb-1">
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-search">
         <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
-          <path fill-rule="evenodd" fill="#ced4da" d="M26.804 29.01a16.311 16.311 0 0 1-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.961-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.589-.004 2.202a1.56 1.56 0 0 1-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.259-5.936 13.259-13.259 0-7.322-5.936-13.258-13.259-13.258C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.259 13.258 13.259z"
+          <path fill-rule="evenodd" fill="currentcolor" d="M26.804 29.01a16.311 16.311 0 0 1-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.961-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.589-.004 2.202a1.56 1.56 0 0 1-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.259-5.936 13.259-13.259 0-7.322-5.936-13.258-13.259-13.258C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.259 13.258 13.259z"
           />
         </svg>
       </span>
     </div>
     <input type="text"
-      [(ngModel)]="query" (ngModelChange)="handleQueryChange($event)"
+      [(ngModel)]="query" (ngModelChange)="handleQueryChange()"
       class="form-control pl-0"
       placeholder="Search packages"
       aria-label="Search"
       autofocus #input>
-    <div class="input-group-append" *ngIf="query.length > 0" (click)="query = ''" [style.cursor]="query.length ? 'pointer' : 'initial'">
+    <div class="input-group-append" *ngIf="query.length > 0" (click)="clear()">
       <span class="clear input-group-text" id="basic-search">
         <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-          <path fill-rule="evenodd" fill="#ced4da" d="M8.114213 10L.942893 2.82868 0 1.885787 1.885787 0l.942893.942893L10 8.114213l7.17132-7.17132L18.114213 0 20 1.885787l-.942893.942893L11.885787 10l7.17132 7.17132L20 18.114213 18.114213 20l-.942893-.942893L10 11.885787l-7.17132 7.17132L1.885787 20 0 18.114213l.942893-.942893L8.114213 10z"/>
+          <path fill-rule="evenodd" fill="currentcolor" d="M8.114213 10L.942893 2.82868 0 1.885787 1.885787 0l.942893.942893L10 8.114213l7.17132-7.17132L18.114213 0 20 1.885787l-.942893.942893L11.885787 10l7.17132 7.17132L20 18.114213 18.114213 20l-.942893-.942893L10 11.885787l-7.17132 7.17132L1.885787 20 0 18.114213l.942893-.942893L8.114213 10z"/>
         </svg>
       </span>
     </div>

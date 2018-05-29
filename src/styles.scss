@@ -19,11 +19,14 @@ $border-radius-sm: 0;
 
 @import "~bootstrap/scss/variables";
 
+$body-color: #4c5565;
+$input-color: #4c5565;
 $input-focus-width: 0;
 $input-focus-box-shadow: #ced4da;
-$input-focus-border-color: $primary;
-$input-focus-width: 0;
-$input-border-width: 0;
+$input-border-color: $gray-400;
+$input-focus-border-color: $gray-400;
+$input-focus-width: 1px;
+$input-border-width: 1px;
 $input-group-addon-bg: #ffffff;
 $input-placeholder-color: $gray-500;
 
@@ -75,9 +78,15 @@ $navbar-light-toggler-border-color: $white;
 body {
   background-color: whitesmoke;
 }
+.home {
+  background-color: whitesmoke;
+  .badge-light {
+    color: $body-color;
+  }
+}
 .text-white {
   hr {
-    border-color: darken($primary, 5%);
+    border-color: #9dbbee;
   }
 }
 .bg-primary-dark {
@@ -86,6 +95,7 @@ body {
     color: white;
   }
 }
+
 .navbar-brand {
   font-weight: 500;
 }

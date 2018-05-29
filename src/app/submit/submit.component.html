@@ -9,20 +9,20 @@
           <small id="nameHelp" class="form-text text-muted">This should be the same name used in package.json and <a href="https://npmjs.com">npm</a></small>
         </div>
 
-        <label>Catagories - Pick a few or none</label>
+        <!-- <label>Catagories - Pick a few or none</label>
         <div class="form-check" *ngFor="let catagory of catagories">
           <input class="form-check-input" type="checkbox" name="catagory{{ catagory.name }}" id="catagory{{ catagory.name }}" [(ngModel)]="catagory.checked">
           <label class="form-check-label" for="catagory{{ catagory.name }}">
             {{ catagory.name }}
             <fa-icon class="small" *ngIf="catagory.description" [ngbTooltip]="catagory.description" [icon]="['fas', 'question-circle']"></fa-icon>
           </label>
-        </div>
+        </div> -->
 
         <div class="form-group mt-3">
           <button [disabled]="!name" type="submit" class="btn btn-primary mb-2">Submit</button>
         </div>
 
-        <div *ngIf="loading">Submitting...</div>
+        <div *ngIf="loading">Submitting please wait...</div>
         <div *ngIf="success" class="text-success">Success! - the package will be added after review</div>
       </form>
     </div>
