@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center mb-3">
-        <h1 class="mt-md-5 mb-1">
+        <h1 class="mt-md-5 mb-1 mt-3">
           <fa-icon [icon]="['fab', 'angular']" size="2x"></fa-icon>
           <br> Angular.parts
         </h1>
@@ -10,10 +10,10 @@
         <app-searchbar></app-searchbar>
       </div>
     </div>
-    <div class="row justify-content-around mb-5">
+    <div class="row justify-content-around mb-1">
       <div class="col-12 col-md-8 text-center">
         <!-- <h6> <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tags']"></fa-icon>Tags</h6> -->
-        <div class="text-muted-primary mb-2 text-right d-none d-md-inline">
+        <div class="text-muted-primary mb-2">
           <a class="badge badge-light mr-1" [routerLink]="['/tag', cat.name]" *ngFor="let cat of catagories">
             {{ cat.name }}
           </a>
