@@ -120,21 +120,19 @@ body {
   color: lighten($primary, 30%);
 }
 .results {
-  background-color: white;
+  .card-body {
+    background-color: white;
+    border-left-color: white !important;
+    border-right-color: white !important;
+    border-top-color: white !important;
+  }
 }
 .result:hover {
-  background-color: $primary;
-  color: white;
+  .card-body {
+    background-color: $light;
+    border: 1px solid rgba($black, .125) !important;
+  }
   cursor: pointer;
-  .text-muted {
-    color: lighten($primary, 40%) !important;
-  }
-  .text-primary, .text-success, .text-danger {
-    color: white !important;
-  }
-  .text-dark {
-    color: $gray-100 !important;
-  }
 }
 
 

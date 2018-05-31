@@ -27,7 +27,7 @@ export class SearchService {
   // todo: probably poorly named
   search(query: string) {
     const httpOptions = {
-      params: new HttpParams().set('query', query),
+      params: new HttpParams().set('query', query).append('facets', '*'),
       headers: new HttpHeaders(environment.algoliaHeaders),
     };
     return this.httpClient.get<any>(
@@ -37,7 +37,7 @@ export class SearchService {
   }
   recent() {
     const httpOptions = {
-      params: new HttpParams().set('hitsPerPage', '10'),
+      params: new HttpParams().set('hitsPerPage', '10').append('facets', '*'),
       headers: new HttpHeaders(environment.algoliaHeaders),
     };
     return this.httpClient.get<any>(
@@ -47,7 +47,7 @@ export class SearchService {
   }
   popular() {
     const httpOptions = {
-      params: new HttpParams().set('hitsPerPage', '10'),
+      params: new HttpParams().set('hitsPerPage', '10').append('facets', '*'),
       headers: new HttpHeaders(environment.algoliaHeaders),
     };
     return this.httpClient.get<any>(
@@ -57,7 +57,7 @@ export class SearchService {
   }
   tag(tag: string) {
     const httpOptions = {
-      params: new HttpParams().set('tagFilters', tag),
+      params: new HttpParams().set('tagFilters', tag).append('facets', '*'),
       headers: new HttpHeaders(environment.algoliaHeaders),
     };
     return this.httpClient.get<any>(

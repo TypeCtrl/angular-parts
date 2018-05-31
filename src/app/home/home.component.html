@@ -14,9 +14,11 @@
       <div class="col-12 col-md-8 text-center">
         <!-- <h6> <fa-icon class="mr-1 mt-1" [styles]="{'vertical-align': 'text-bottom'}" [icon]="['fas', 'tags']"></fa-icon>Tags</h6> -->
         <div class="text-muted-primary mb-2">
-          <a class="badge badge-light mr-1" [routerLink]="['/tag', cat.name]" *ngFor="let cat of catagories">
-            {{ cat.name }}
-          </a>
+          <ng-template ngFor let-cat [ngForOf]="categories" let-i="index">
+            <a class="badge badge-light mr-1" [routerLink]="['/tag', cat.name]">
+              <strong class="text-muted">{{ cat.count }}</strong> {{ cat.name }}
+            </a>
+          </ng-template>
         </div>
       </div>
     </div>

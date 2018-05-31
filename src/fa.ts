@@ -1,18 +1,17 @@
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faAngular, faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
-  faCalendar,
   faArrowAltCircleDown,
-  faStar,
-  faFileArchive,
-  faTags,
-  faTag,
+  faCalendar,
   faCheckCircle,
-  faTimesCircle,
+  faFileArchive,
   faMinusCircle,
   faQuestionCircle,
-  faArchive,
+  faStar,
+  faTag,
+  faTags,
+  faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAngular, faNpm, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 library.add(
   faCalendar,
