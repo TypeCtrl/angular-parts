@@ -1,8 +1,9 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAngular, faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
-  faArrowAltCircleDown,
   faCalendar,
+  faArrowAltCircleDown,
+  faArrowCircleDown,
   faCheckCircle,
   faFileArchive,
   faMinusCircle,
@@ -11,11 +12,14 @@ import {
   faTag,
   faTags,
   faTimesCircle,
+  faBalanceScale,
+  faShieldAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
   faCalendar,
   faArrowAltCircleDown,
+  faArrowCircleDown,
   faStar,
   faFileArchive,
   faTags,
@@ -26,4 +30,6 @@ library.add(
   faQuestionCircle,
   faAngular,
   faGithub,
+  faBalanceScale,
+  faShieldAlt,
 );
