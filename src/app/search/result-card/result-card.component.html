@@ -11,10 +11,10 @@
       <div class="d-flex flex-row text-dark">
         <div class="mr-2" style="padding-top: 1px; width: 65px" ngbTooltip="Downloads Last Month">
           <fa-icon [icon]="['fas', 'arrow-alt-circle-down']"></fa-icon>
-          <ng-template [ngIf]="result.downloadsCount > 100000">
-            {{ result.downloadsCount / 100000 | number:'1.0-0' }}m
+          <ng-template [ngIf]="result.downloadsCount >= 1000000">
+            {{ result.downloadsCount / 1000000 | number:'1.0-0' }}m
           </ng-template>
-          <ng-template [ngIf]="result.downloadsCount < 100000 && result.downloadsCount >= 1000">
+          <ng-template [ngIf]="result.downloadsCount < 1000000 && result.downloadsCount >= 1000">
             {{ result.downloadsCount / 1000 | number:'1.0-0' }}k
           </ng-template>
           <ng-template [ngIf]="result.downloadsCount >= 1000">
