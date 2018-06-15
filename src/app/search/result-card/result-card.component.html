@@ -17,7 +17,7 @@
           <ng-template [ngIf]="result.downloadsCount < 1000000 && result.downloadsCount >= 1000">
             {{ result.downloadsCount / 1000 | number:'1.0-0' }}k
           </ng-template>
-          <ng-template [ngIf]="result.downloadsCount >= 1000">
+          <ng-template [ngIf]="result.downloadsCount <= 1000">
             {{ result.downloadsCount | number:'1.0-0' }}
           </ng-template>
         </div>
