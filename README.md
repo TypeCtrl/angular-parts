@@ -7,3 +7,5 @@ __Looking to add your package or library?__: https://github.com/TypeCtrl/angular
 * [react.parts](https://react.parts/) initial idea and domain name
 * [redex.github.io](https://redex.github.io/) design
 * [awesome-angular-components](https://github.com/brillout/awesome-angular-components) initial list of packages
+* [gatsby plugins](https://www.gatsbyjs.org/plugins/) another fun design
+* [native.directory](https://native.directory/) useful package information
