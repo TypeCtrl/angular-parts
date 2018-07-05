@@ -31,7 +31,7 @@
     "angulartics2": "6.1.1",
     "bootstrap": "4.1.1",
     "core-js": "2.5.7",
-    "date-fns": "2.0.0-alpha.10",
+    "date-fns": "2.0.0-alpha.11",
     "rxjs": "6.2.1",
     "zone.js": "0.8.26"
   },
