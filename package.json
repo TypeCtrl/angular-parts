@@ -42,7 +42,7 @@
     "@angular-devkit/build-angular": "0.7.0-rc.0",
     "@types/jasmine": "2.8.8",
     "@types/node": "10.5.2",
-    "codelyzer": "4.3.0",
+    "codelyzer": "4.4.2",
     "jasmine-core": "2.99.1",
     "karma": "2.0.4",
     "karma-chrome-launcher": "2.2.0",
