@@ -1,23 +1,23 @@
-@import "~bootstrap/scss/functions";
+@import '~bootstrap/scss/functions';
 
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 668px,
   lg: 792px,
-  xl: 850px
+  xl: 850px,
 );
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 760px,
-  xl: 912px
+  xl: 912px,
 );
 
-$blue: #3978DD;
+$blue: #3978dd;
 $border-radius-sm: 0;
 
-@import "~bootstrap/scss/variables";
+@import '~bootstrap/scss/variables';
 
 $body-color: #4c5565;
 $input-color: #4c5565;
@@ -32,35 +32,34 @@ $input-placeholder-color: $gray-500;
 $line-height-lg: 0.2;
 $line-height-sm: 0.2;
 
-
 $navbar-padding-y: $spacer / 10;
-$navbar-toggler-padding-y:          .25rem;
-$navbar-toggler-padding-x:          .25rem;
-$navbar-toggler-font-size:          $font-size-lg;
-$navbar-toggler-border-radius:      $btn-border-radius;
+$navbar-toggler-padding-y: 0.25rem;
+$navbar-toggler-padding-x: 0.25rem;
+$navbar-toggler-font-size: $font-size-lg;
+$navbar-toggler-border-radius: $btn-border-radius;
 $navbar-light-toggler-border-color: $white;
 
-@import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/root";
-@import "~bootstrap/scss/reboot";
-@import "~bootstrap/scss/type";
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
 // @import "~bootstrap/scss/images";
-@import "~bootstrap/scss/code";
-@import "~bootstrap/scss/grid";
-@import "~bootstrap/scss/tables";
-@import "~bootstrap/scss/forms";
-@import "~bootstrap/scss/buttons";
-@import "~bootstrap/scss/transitions";
+@import '~bootstrap/scss/code';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/tables';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/transitions';
 // @import "~bootstrap/scss/dropdown";
 // @import "~bootstrap/scss/button-group";
-@import "~bootstrap/scss/input-group";
+@import '~bootstrap/scss/input-group';
 // @import "~bootstrap/scss/custom-forms";
 // @import "~bootstrap/scss/nav";
-@import "~bootstrap/scss/navbar";
-@import "~bootstrap/scss/card";
+@import '~bootstrap/scss/navbar';
+@import '~bootstrap/scss/card';
 // @import "~bootstrap/scss/breadcrumb";
 // @import "~bootstrap/scss/pagination";
-@import "~bootstrap/scss/badge";
+@import '~bootstrap/scss/badge';
 // @import "~bootstrap/scss/jumbotron";
 // @import "~bootstrap/scss/alert";
 // @import "~bootstrap/scss/progress";
@@ -68,14 +67,14 @@ $navbar-light-toggler-border-color: $white;
 // @import "~bootstrap/scss/list-group";
 // @import "~bootstrap/scss/close";
 // @import "~bootstrap/scss/modal";
-@import "~bootstrap/scss/tooltip";
+@import '~bootstrap/scss/tooltip';
 // @import "~bootstrap/scss/popover";
 // @import "~bootstrap/scss/carousel";
-@import "~bootstrap/scss/utilities";
-@import "~bootstrap/scss/print";
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/print';
 
 // header {
-  // border-bottom: 1px solid $gray-500;
+// border-bottom: 1px solid $gray-500;
 // }
 body {
   background-color: whitesmoke;
@@ -132,11 +131,10 @@ body {
 .result:hover {
   .card-body {
     background-color: $light;
-    border: 1px solid rgba($black, .125) !important;
+    border: 1px solid rgba($black, 0.125) !important;
   }
   cursor: pointer;
 }
-
 
 // readme cleanup
 .readme {
@@ -162,5 +160,27 @@ body {
   }
   h5 {
     font-size: 0.9rem;
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border: 1px solid #dee2e6;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  table th,
+  table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border: 1px solid #dee2e6;
   }
 }
