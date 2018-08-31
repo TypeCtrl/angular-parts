@@ -52,7 +52,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    NgbTooltipModule.forRoot(),
+    NgbTooltipModule,
 
     FontAwesomeModule,
     Angulartics2Module.forRoot([Angulartics2GoogleTagManager]),

@@ -32,7 +32,7 @@ describe('AppComponent', () => {
         BrowserAnimationsModule,
         HttpClientModule,
         FontAwesomeModule,
-        NgbTooltipModule.forRoot(),
+        NgbTooltipModule,
         Angulartics2Module.forRoot([Angulartics2GoogleTagManager]),
       ],
       declarations: [
