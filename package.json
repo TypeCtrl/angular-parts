@@ -33,7 +33,7 @@
     "core-js": "2.5.7",
     "date-fns": "2.0.0-alpha.26",
     "rxjs": "6.3.3",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.29"
   },
   "devDependencies": {
     "@angular/cli": "6.1.5",
